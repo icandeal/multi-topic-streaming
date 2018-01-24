@@ -14,7 +14,6 @@ import kafka.utils.ZKGroupTopicDirs
 import org.I0Itec.zkclient.ZkClient
 import org.apache.log4j.LogManager
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.SaveMode
 import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.{Seconds, StreamingContext}
