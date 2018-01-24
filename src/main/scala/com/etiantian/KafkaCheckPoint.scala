@@ -2,7 +2,7 @@ package com.etiantian
 
 import kafka.serializer.StringDecoder
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.streaming.kafka.KafkaUtils
+import org.apache.spark.streaming.kafka.{KafkaCluster, KafkaUtils}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -32,7 +32,7 @@ object KafkaCheckPoint {
     val kafkaParam = Map(
       "metadata.broker.list" -> "t45.test.etiantian.com:9092",
       "group.id" -> "KafkaCheckPoint",
-      "auto.offset.reset" -> "largest"
+      "auto.offset.reset" -> "smallest" // 从最早的开始读
     )
 
     for(topic <- topicList) {
